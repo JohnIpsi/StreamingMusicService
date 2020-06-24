@@ -242,7 +242,15 @@ public class Broker extends Node {
                             output.writeObject(null);
                             output.flush();
                         }
-                    } else {
+                    }
+                    else if(reg.equalsIgnoreCase("You are not my comrade")){
+                        if(pubrequest!=null){
+                            outpub.writeObject("exit");
+                            outpub.flush();
+                        }
+                        break;
+                    }
+                    else {
                         break;
                     }
                     previousStage = "artist";
